@@ -143,14 +143,24 @@ $$
 \end{align}
 $$
 
-## 5.2 理想磁流体的间断面 (Discontinuity Surface)
+## 5.2 理想磁流体的间断面 (Discontinuity Surface of Ideal Magnetofluid)
 
 表征一般流体或磁流体的一些物理量，如速度、压强、密度、磁场强度等，它们的空间分布通常是连续的，但在某些特定的条件下，可能出现物理量的连续分布遭到破坏的情形。这时，物理量在某个几何面上出现不连续的跳跃，这种曲面就是**间断面**(discontinuity surface)。理想的几何面实际上是不存在的，尽管物理量在其两侧出现急剧变化，但所谓“间断面”仍然具有一定的厚度。只不过这种“面”（特别是强间断面）的厚度，与所处理的问题的特征尺度相比可以忽略而已。因此在理论上便将这种“薄薄”的突变区域抽象为一个无厚度的几何面，并用“间断面”的概念来描述它。
 
-前面已指出，激波实际上相当于一种流体力学间断面。然而，激波两侧物理量的变化必须满足一定的物理关系。例如，对稳定的平面激波而言，其前后的物理量必须满足质量守恒、动量守恒和能量守恒等基本物理规律。由此导出了平面激波的基本规律（5.1-1）～
-（5.1-3）式或（5.1-4）式～（5.1-6）式，建立了平面激波的理论。通常把突变面两侧物理量所需满足的物理规律称为**相容性条件**(compatibility condition)。显然，它表征了间断面的基本性质。
+前面已指出，激波实际上相当于一种流体力学间断面。然而，激波两侧物理量的变化必须满足一定的物理关系。例如，对稳定的平面激波而言，其前后的物理量必须满足质量守恒、动量守恒和能量守恒等基本物理规律。由此导出了平面激波的基本规律$()$式，建立了平面激波的理论。通常把突变面两侧物理量所需满足的物理规律称为**相容性条件**(compatibility condition)。显然，它表征了间断面的基本性质。
 
-5.2.1 理想磁流体力学间断面的相容性条件
-5.2. 1
-磁流体力学间断面的相容性条件显然较上节导出的（5.1-4）～（5.1-6）式复杂。从
-磁流体力学方程出发，横越间断面积分这些方程，便可得到其相容性条件。考虑到绝大多
+### 5.2.1 相容性条件 (Compatibility Condition)
+
+磁流体力学间断面的相容性条件显然较上节导出的方程组$(5.1.)$复杂。从磁流体力学基本方程组出发，横越间断面积分这些方程，便可得到其相容性条件。考虑到绝大多数讨论空间和天体磁流体激波的应用中，电阻、黏性、热传导和重力是可以忽略的，因此这种激波可以用完全导电的理想磁流体方程组进行描述。由方程组$(2.6.6)$可推得
+
+$$
+\begin{cases}
+\displaystyle \frac{\partial \rho}{\partial t} = - \nabla \cdot (\rho \bm{v}) \\ \\
+\displaystyle \frac{\partial (\rho \bm{v})}{\partial t} = -\nabla \cdot \left[ \rho \bm{v} \bm{v} + \left( p + \frac{B^2}{2\mu_0} \right) \overset{\rightarrow \rightarrow}{I} - \frac{1}{\mu_0} \bm{B} \bm{B} \right] \\ \\
+\displaystyle \frac{\partial}{\partial t} \left[ \rho \left( \varepsilon + \frac{v^2}{2} \right) + \frac{B^2}{2\mu_0} \right] = \nabla \cdot \left[ \left( \varepsilon + \frac{v^2}{2} + \frac{p}{\rho} \right) \rho \bm{v} \right] + \frac{1}{\mu_0} \nabla \cdot \left[ B^2 \bm{v} - (\bm{B} \cdot \bm{v}) \bm{B} \right] \\ \\
+\displaystyle \frac{\partial \bm{B}}{\partial t} = \nabla \times (\bm{v} \times \bm{B}) \\ \\
+\nabla \cdot \bm{B} = 0
+\end{cases}
+$$
+
+## 5.3 理想磁流体力学激波的传播
