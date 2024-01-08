@@ -315,13 +315,13 @@ $$
 \end{cases}
 $$
 
-其中$\displaystyle \nu = \frac{\eta}{\rho_0}$为运动粘滞系数。考虑到Alfvén是横波，则$B_\mathrm{1z} = v_\mathrm{1z} = 0$，$\bm{v}_{1\perp} = v_\mathrm{1x} \bm{i} + v_\mathrm{1y} \bm{j}$为垂直于$\bm{B}_0$的小扰动。设无穷远处$p_1 = 0$，$B_\mathrm{1z} = 0$，可推得
+其中$\displaystyle \nu = \frac{\eta}{\rho_0}$为运动粘滞系数。考虑到Alfvén波是横波，则$B_\mathrm{1z} = v_\mathrm{1z} = 0$，$\bm{v}_{1\perp} = v_\mathrm{1x} \bm{i} + v_\mathrm{1y} \bm{j}$为垂直于$\bm{B}_0$的小扰动。设无穷远处$p_1 = 0$，$B_\mathrm{1z} = 0$，可推得
 
 $$
 \frac{\partial^2 \bm{v}_{1 \perp}}{\partial t^2} - v_\mathrm{A}^2 \frac{\partial^2 \bm{v}_{1 \perp}}{\partial z^2} = (\eta_\mathrm{m} + \nu) \frac{\partial^3 \bm{v}_{1 \perp}}{\partial t \partial z^2} \tag{4.2.2}
 $$
 
-显然，当$\eta_\mathrm{m} = \nu = 0$时，上式便简化为理想磁流体中的阿尔文波的传播方程。上式右端即阻尼项。考虑上式的单色平面波解
+显然，当$\eta_\mathrm{m} = \nu = 0$时，上式便简化为理想磁流体中的Alfvén波的传播方程。上式右端即阻尼项。考虑上式的单色平面波解
 
 $$
 \bm{v}_{1 \perp} = \bar{\bm{v}}_{1 \perp} e^{i (\omega t - k z)}
@@ -339,12 +339,114 @@ $$
 \tilde{\omega} = \frac{1}{2} \sqrt{4 v_\mathrm{A}^2 k^2 - (\eta_\mathrm{m} + \nu)^2 k^4} \pm \frac{1}{2} (\eta_\mathrm{m} + \nu) k^2 i \tag{4.2.3}
 $$
 
-有限电导率和有限黏滞性导致阿尔文波的衰减，其衰减的特征时间为
+有限电导率和有限黏滞性导致Alfvén波的衰减，其衰减的特征时间为
 
 $$
 \tau = \frac{2 \pi}{\Im(\tilde{\omega})} = \frac{4 \pi}{(\eta_\mathrm{m} + \nu) k^2}
 $$
 
+$(4.2.3)$式还表明，为了使阻尼Alfvén波有波动解，必须满足
 
+$$
+\begin{align}
+\Re(\tilde{\omega}) & > 0 \nonumber \\
+\Rightarrow v_\mathrm{A} & > \frac{1}{2} (\eta_\mathrm{m} + \nu) k
+\end{align}
+$$
 
 ## 4.3 简单波 (Simple Wave)
+
+若初始扰动具有不是很小的有限振幅，则我们不能利用4.1节中的小扰动方法将方
+程组线性化，而必须求解非线性方程组。下面我们讨论流体和磁流体的一维非定常流
+动——（磁）简单波，由此了解有限振幅的传播规律和特性，及转变为激波的可能性和转化
+条件。
+
+在处理小扰动时，对方程组做线性化处理，得到方程的解是$(x + v t)$的函数(单色平面波)，它相当于形状不变但具有以速度$v$移动的波轮廓的“行波”(波轮廓是指各有关物理量——密度、速度等在沿波传播方向上的分布情况)。前面讨论的声波、磁声波、磁流波都属于这种情况。既然速度、密度和压强在这种行波中都只是同一组合$(x + v t)$的函数，所以它们相互之间都可用不显含坐标与时间的关系式来表达，例如$p = p (\rho)$，$v = v (\rho)$等。
+
+如果扰动不是小振幅，而是有限波幅的情形，那么上述这些简单关系就不再成立。但是仍有可能采用小振幅线性方程解式$f (x + v t)$的推广来求出表示运动方程的准确解，这个解通常被称为简单波或Riemann波。
+
+假定任意振幅波中密度和速度仍可相互以函数形式表达，由此我们来理解流体的一维非定常运动。
+
+绝热条件下理想流体的基本方程组为
+
+$$
+\begin{cases}
+\displaystyle \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \bm{v}) = 0 \\ \\
+\displaystyle \frac{\partial \bm{v}}{\partial t} + (\bm{v} \cdot \nabla) \bm{v} = -\frac{1}{\rho} \nabla p
+\end{cases}
+$$
+
+在讨论一维流动时，化为
+
+$$
+\begin{cases}
+\displaystyle \frac{\partial \rho}{\partial t} + \frac{\partial (\rho v)}{\partial x} = 0 \\ \\
+\displaystyle \frac{\partial v}{\partial t} + v\frac{\partial v}{\partial x} + \frac{1}{\rho} \frac{\partial p}{\partial x} = 0
+\end{cases}
+$$
+
+假设$p$、$\rho$和$v$之间互为单值函数，可推得
+
+$$
+\begin{align}
+& v = \pm \int \frac{c_\mathrm{s}}{\rho} \mathrm{d} \rho \tag{4.3.1} \\
+& x = (v \pm c_\mathrm{s}) + f (v) \nonumber \\
+& c_\mathrm{s} = \sqrt{\frac{\mathrm{d} p}{\mathrm{d} \rho}} \nonumber
+\end{align}
+$$
+
+其中$f$为任意函数。借助状态方程可积分$(4.3.1)$式。
+
+再考虑绝热条件下完全导电的理想磁流体，其基本方程组为
+
+$$
+\begin{cases}
+\displaystyle \frac{\partial \rho}{\partial t} + \nabla \cdot (\bm{\rho v}) = 0 \\ \\
+\displaystyle \frac{\partial \bm{v}}{\partial t} + (\bm{v} \cdot \nabla) \bm{v} = -\frac{1}{\rho} \nabla p + \frac{1}{\mu_0 \rho} (\nabla \times \bm{B}) \times \bm{B} \\ \\
+\displaystyle \frac{\partial \bm{B}}{\partial t} = \nabla \times (\bm{v} \times \bm{B})
+\end{cases}
+$$
+
+在讨论一维流动时，化为
+
+$$
+\begin{cases}
+\displaystyle \frac{\partial \rho}{\partial t} + \frac{\partial (\rho v)}{\partial x} = 0 \\ \\
+\displaystyle \frac{\partial v}{\partial t} + v \frac{\partial v}{\partial x} = -\frac{1}{\rho} \frac{\partial p}{\partial x} + \frac{1}{\mu_0 \rho} \left( B_y \frac{\partial B_y}{\partial x} + B_z \frac{\partial B_z}{\partial x} \right) \\ \\
+\displaystyle B_x \frac{\partial B_y}{\partial x} = 0 \\ \\
+\displaystyle B_x \frac{\partial B_z}{\partial x} = 0 \\ \\
+\displaystyle \frac{\partial B_x}{\partial t} = 0 \\ \\
+\displaystyle \frac{\partial B_y}{\partial t} = -\frac{\partial (v B_y)}{\partial x} \\ \\
+\displaystyle \frac{\partial B_z}{\partial t} = -\frac{\partial (v B_z)}{\partial x} \tag{4.3.2}
+\end{cases}
+$$
+
+由上述方程组可得
+
+$$
+\begin{align}
+& \frac{\partial B_x}{\partial t} = 0 \nonumber \\
+& \Rightarrow B_x = B_x (x) \nonumber
+\end{align}
+$$
+
+于是分两种情况。若$B_x \neq 0$，由方程组$(4.3.2)$可得
+
+$$
+\begin{align}
+& \frac{\partial B_y}{\partial x} = \frac{\partial B_z}{\partial x} = 0 \nonumber \\
+& \Rightarrow \frac{\partial v}{\partial t} + v \frac{\partial v}{\partial x} = -\frac{1}{\rho} \frac{\partial p}{\partial x} \nonumber
+\end{align}
+$$
+
+此时方程组与流体情形完全相同，相当于流动不受磁场影响。
+
+若$B_x = 0$，即流动方向与磁场方向垂直。此时方程组$(4.3.2)$化为
+
+$$
+\begin{cases}
+\displaystyle \frac{\partial \rho}{\partial t} + v \frac{\partial \rho}{\partial x} = -\rho \frac{\partial v}{\partial x} \\ \\
+\displaystyle \frac{\partial B}{\partial t} + v \frac{\partial B}{\partial x} = - B \frac{\partial v}{\partial x} \\ \\
+\displaystyle \frac{\partial v}{\partial t} + v \frac{\partial v}{\partial x} = -\frac{1}{\rho} \frac{\partial}{\partial x} \left( p + \frac{B^2}{2\mu_0} \right)
+\end{cases}
+$$
